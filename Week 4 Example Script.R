@@ -12,4 +12,5 @@ git_default_branch_rediscover()
 d <- a^b
 
 e <- d*c
->>>>>>> 079b09b23d734030801e24153beb072ccafd0b71
+
+f <- e+d
