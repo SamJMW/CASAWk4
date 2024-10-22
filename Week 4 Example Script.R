@@ -8,9 +8,12 @@ library(gitcreds)
 
 use_github()
 git_default_branch_rediscover()
-=======
+
 d <- a^b
 
 e <- d*c
 
 f <- e+d
+
+a+d
+
