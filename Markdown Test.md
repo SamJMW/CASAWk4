@@ -14,6 +14,8 @@
 library(dplyr)
 library(tidyverse)
 library(here)
+library(janitor)
+library(sf)
 
 GIData <- read.csv("HDR23-24_Composite_indices_complete_time_series.csv")
 
@@ -29,5 +31,12 @@ Top_10 <- GIData %>%
 Bottom_10 <- GIData %>%
   arrange(GI_diff_10_19) %>%
   slice_head(n=10)
+
+World <- st_read("World_Countries_Generalized.shp")
+
+GIData <- clean_names(GIData)
+World <- clean_names(World)
+
+join_data <- left_join(World, GIData, by= c("countryaff" = "country"))
 
 ```
